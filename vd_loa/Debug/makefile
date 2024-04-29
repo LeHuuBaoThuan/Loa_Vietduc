@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (11.3.rel1)
+# Toolchain: GNU Tools for STM32 (12.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -12,6 +12,7 @@ RM := rm -rf
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include 0_driver/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -34,34 +35,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := loa_vietduc
+BUILD_ARTIFACT_NAME := vd_loa
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-loa_vietduc.elf \
+vd_loa.elf \
 
 MAP_FILES += \
-loa_vietduc.map \
+vd_loa.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-loa_vietduc.list \
+vd_loa.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: loa_vietduc.elf secondary-outputs
+main-build: vd_loa.elf secondary-outputs
 
 # Tool invocations
-loa_vietduc.elf loa_vietduc.map: $(OBJS) $(USER_OBJS) E:\STM32\STM32_TAPIT\loa_vietduc\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "loa_vietduc.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\STM32\STM32_TAPIT\loa_vietduc\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="loa_vietduc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+vd_loa.elf vd_loa.map: $(OBJS) $(USER_OBJS) C:\Users\BaoThuan\OneDrive\ -\ The\ University\ of\ Technology\Desktop\PROJECT\GIT_HUB\Vietduc\0_LOA\vd_loa\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "vd_loa.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\BaoThuan\OneDrive - The University of Technology\Desktop\PROJECT\GIT_HUB\Vietduc\0_LOA\vd_loa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vd_loa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +71,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-loa_vietduc.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "loa_vietduc.list"
+vd_loa.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "vd_loa.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout loa_vietduc.elf loa_vietduc.list loa_vietduc.map
+	-$(RM) default.size.stdout vd_loa.elf vd_loa.list vd_loa.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

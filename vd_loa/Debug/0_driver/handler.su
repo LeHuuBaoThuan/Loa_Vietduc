@@ -1,0 +1,6 @@
+C:/Users/BaoThuan/OneDrive - The University of Technology/Desktop/PROJECT/GIT_HUB/Vietduc/0_LOA/0_driver/handler.c:26:6:init_handler	16	static
+C:/Users/BaoThuan/OneDrive - The University of Technology/Desktop/PROJECT/GIT_HUB/Vietduc/0_LOA/0_driver/handler.c:37:13:OFF_ALL	4	static
+C:/Users/BaoThuan/OneDrive - The University of Technology/Desktop/PROJECT/GIT_HUB/Vietduc/0_LOA/0_driver/handler.c:48:13:ON_ALL	4	static
+C:/Users/BaoThuan/OneDrive - The University of Technology/Desktop/PROJECT/GIT_HUB/Vietduc/0_LOA/0_driver/handler.c:58:15:Mode1_handl	8	static
+C:/Users/BaoThuan/OneDrive - The University of Technology/Desktop/PROJECT/GIT_HUB/Vietduc/0_LOA/0_driver/handler.c:79:15:Mode2_handl	4	static
+C:/Users/BaoThuan/OneDrive - The University of Technology/Desktop/PROJECT/GIT_HUB/Vietduc/0_LOA/0_driver/handler.c:104:15:Handler_Led	8	static

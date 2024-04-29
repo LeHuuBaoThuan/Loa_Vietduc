@@ -1,0 +1,20 @@
+/*
+ * handler.h
+ *
+ *  Created on: Apr 28, 2024
+ *      Author: BaoThuan
+ */
+
+#ifndef _INCLUDE_HANDLER_H_
+#define _INCLUDE_HANDLER_H_
+
+#include "stm32f1xx_hal.h"
+
+void init_handler(ADC_HandleTypeDef* hadc, TIM_HandleTypeDef* htim);
+void ON_ALL();
+void OFF_ALL();
+void MODE_1();
+void MODE_2();
+void Handler_Led();
+
+#endif /* _INCLUDE_HANDLER_H_ */

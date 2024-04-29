@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;vd_loa/loa_vietduc.ioc&apos; to &apos;vd_loa.ioc&apos;" description="Rename resource &apos;loa_vietduc.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="loa_vietduc.ioc" name="vd_loa.ioc" stamp="1714320072065" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;vd_loa/0_driver/lL7d_595.c&apos; to &apos;L7d_595.c&apos;" description="Rename resource &apos;lL7d_595.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="0_driver/lL7d_595.c" name="L7d_595.c" stamp="1714321888528" updateReferences="true"/>
+</session>

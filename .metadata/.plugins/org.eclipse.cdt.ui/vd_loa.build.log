@@ -1,0 +1,18 @@
+17:56:53 **** Incremental Build of configuration Debug for project vd_loa ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/BaoThuan/OneDrive - The University of Technology/Desktop/PROJECT/GIT_HUB/Vietduc/0_LOA/0_driver/0_include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "vd_loa.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\BaoThuan\OneDrive - The University of Technology\Desktop\PROJECT\GIT_HUB\Vietduc\0_LOA\vd_loa\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="vd_loa.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/Users/BaoThuan/STM32CubeIDE_1.12.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: vd_loa.elf has a LOAD segment with RWX permissions
+Finished building target: vd_loa.elf
+ 
+arm-none-eabi-size  vd_loa.elf 
+arm-none-eabi-objdump -h -S vd_loa.elf  > "vd_loa.list"
+   text	   data	    bss	    dec	    hex	filename
+  14900	     44	   1868	  16812	   41ac	vd_loa.elf
+Finished building: default.size.stdout
+ 
+Finished building: vd_loa.list
+ 
+
+17:56:54 Build Finished. 0 errors, 1 warnings. (took 809ms)
+
