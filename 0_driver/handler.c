@@ -8,7 +8,7 @@
 
 uint16_t value_ADC1[2] = {0};	// Phan tu 0: tuong ung mic doc duoc
 								// Phan tu 1: tuong ung che do nhap nhay may giay mode 2
-uint16_t thre_MIC = 700;
+uint16_t thre_MIC = 1400;
 
 uint8_t count_mode2 = 1;
 
@@ -88,7 +88,7 @@ HANDLER_STATE Mode2_handl(void)
 		count_mode2 = 3;
 	else if(value_ADC1[1] < 819 * 4)
 		count_mode2 = 4;
-	else if(value_ADC1[1] < 819 * 5)
+	else if(value_ADC1[1] <= 819 * 5)
 		count_mode2 = 5;
 	else
 		count_mode2 = 1;
@@ -103,12 +103,14 @@ HANDLER_STATE Mode2_handl(void)
   */
 HANDLER_STATE Handler_Led(void)
 {
+	/*CHE DO 1*/
 	if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_11) == GPIO_PIN_RESET)
 	{
 		mode_status = MODE_1;
 		if(Mode1_handl() != HANDLER_OKE)
 			return HANDLER_FAIL;
 	}
+	/*CHE DO 2*/
 	else if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_11) == GPIO_PIN_SET)
 	{
 		mode_status = MODE_2;

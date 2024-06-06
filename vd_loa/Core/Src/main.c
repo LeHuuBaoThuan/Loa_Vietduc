@@ -116,24 +116,29 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   /*ADC INIT*/
-  HAL_ADCEx_Calibration_Start(&hadc1);
+  if(HAL_ADCEx_Calibration_Start(&hadc1) != HAL_OK)
+	  Error_Handler();
   // start pwm generation
   if(HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1) != HAL_OK)
-    Error_Handler();
+	  Error_Handler();
   // Start DMA
   if(HAL_ADC_Start_DMA(&hadc1, (uint32_t*)value_ADC1, 2) != HAL_OK)
 	  Error_Handler();
   /*TIMEBASE INIT*/
-  HAL_TIM_Base_Start_IT(&htim2);
+  if(HAL_TIM_Base_Start_IT(&htim2) != HAL_OK)
+	  Error_Handler();
   /*USER INIT*/
   L7D_74HC595_Init(DATA_595_GPIO_Port, CLK_595_GPIO_Port, LAT_595_GPIO_Port, DATA_595_Pin, CLK_595_Pin, LAT_595_Pin);
   init_handler(&hadc1, &htim2);
+
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_8 | GPIO_PIN_9 , GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  /*Doc ADC 10KHz*/
 	  if(flat_ADC == 1)
 	  {
 	    flat_ADC = 0;
@@ -142,9 +147,8 @@ int main(void)
 	    	Error_Handler();
 	  }
 
-
-
-	  if(counter_timer2 >= count_mode2)
+	  /**/
+	  if(counter_timer2 >= count_mode2)	// 1s
 	  {
 		  counter_timer2 = 0;
 
